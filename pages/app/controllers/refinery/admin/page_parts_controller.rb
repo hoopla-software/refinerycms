@@ -23,7 +23,7 @@ module Refinery
 
       protected
         def new_page_part_params
-          params.permit(:title, :slug, :body)
+          params.permit(:title, :slug, :body, :part_index, :locale)
         end
 
     end
