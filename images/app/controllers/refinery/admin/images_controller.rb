@@ -138,14 +138,16 @@ module Refinery
       end
 
       def image_params
-        params.require(:image).permit(permitted_image_params)
+        logger.info(params.inspect);
+        #params.require(:image).permit(permitted_image_params)
+        params.require(:image).permit!
       end
 
       private
 
       def permitted_image_params
         [
-          :image, :image_size, :image_title, :image_alt
+          :image_size, :image_title, :image_alt, :image => [] 
         ]
       end
 
